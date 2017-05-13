@@ -1,2 +1,3 @@
-# gradle-calculator-example
-A Starting Point for Examples
+# Gradle Calculator
+
+A simple, foundational [gradle](https://gradle.org/) project for examples.

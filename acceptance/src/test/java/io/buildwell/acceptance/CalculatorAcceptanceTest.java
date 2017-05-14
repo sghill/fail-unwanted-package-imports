@@ -3,7 +3,7 @@ package io.buildwell.acceptance;
 import io.buildwell.foundation.Calculator;
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
+import static junit.framework.Assert.assertEquals;
 
 public class CalculatorAcceptanceTest {
     private Calculator calc = new Calculator();

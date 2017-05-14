@@ -1,3 +1,4 @@
-# Gradle Calculator
+# Gradle Checkstyle Example
 
-A simple, foundational [gradle](https://gradle.org/) project for examples.
+An example project that fails the build because of a class imported from an
+unwanted package.

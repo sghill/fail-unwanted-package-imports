@@ -2,7 +2,7 @@
 + uname -a
 Darwin steves-imac.lan 16.6.0 Darwin Kernel Version 16.6.0: Fri Apr 14 16:21:16 PDT 2017; root:xnu-3789.60.24~6/RELEASE_X86_64 x86_64
 + date
-Tue Jun 20 15:54:10 PDT 2017
+Tue Jun 20 16:08:02 PDT 2017
 + ./gradlew --console=plain --no-daemon --version
 
 ------------------------------------------------------------
@@ -33,5 +33,67 @@ For example, try running gradlew :acceptance:tasks
 
 BUILD SUCCESSFUL
 
-Total time: 2.43 secs
+Total time: 2.384 secs
 + ./gradlew --console=plain --no-daemon dependencies --configuration checkstyle
+:dependencies
+
+------------------------------------------------------------
+Root project
+------------------------------------------------------------
+
+checkstyle - The Checkstyle libraries to be used for this project.
+\--- com.puppycrawl.tools:checkstyle:6.19
+     +--- antlr:antlr:2.7.7
+     +--- org.antlr:antlr4-runtime:4.5.3
+     +--- commons-beanutils:commons-beanutils:1.9.2
+     +--- commons-collections:commons-collections:3.2.2
+     +--- commons-cli:commons-cli:1.3.1
+     \--- com.google.guava:guava:19.0
+
+BUILD SUCCESSFUL
+
+Total time: 2.406 secs
++ echo '*** *** *** *** *** ***'
+*** *** *** *** *** ***
++ ./gradlew --console=plain --no-daemon clean check
+:clean UP-TO-DATE
+:acceptance:clean
+:foundation:clean
+:compileJava NO-SOURCE
+:processResources NO-SOURCE
+:classes UP-TO-DATE
+:checkstyleMain NO-SOURCE
+:compileTestJava NO-SOURCE
+:processTestResources NO-SOURCE
+:testClasses UP-TO-DATE
+:checkstyleTest NO-SOURCE
+:test NO-SOURCE
+:check UP-TO-DATE
+:acceptance:compileJava NO-SOURCE
+:acceptance:processResources NO-SOURCE
+:acceptance:classes UP-TO-DATE
+:acceptance:checkstyleMain NO-SOURCE
+:foundation:compileJava
+:foundation:processResources NO-SOURCE
+:foundation:classes
+:foundation:jar
+:acceptance:compileTestJavaNote: /Users/sghill/code/build-well/gradle-checkstyle-example/acceptance/src/test/java/io/buildwell/acceptance/CalculatorAcceptanceTest.java uses or overrides a deprecated API.
+Note: Recompile with -Xlint:deprecation for details.
+
+:acceptance:processTestResources NO-SOURCE
+:acceptance:testClasses
+:acceptance:checkstyleTest[ant:checkstyle] [ERROR] /Users/sghill/code/build-well/gradle-checkstyle-example/acceptance/src/test/java/io/buildwell/acceptance/CalculatorAcceptanceTest.java:6:1: Import from illegal package - junit.framework.Assert.assertEquals. [IllegalImport]
+ FAILED
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':acceptance:checkstyleTest'.
+> Checkstyle rule violations were found. See the report at: file:///Users/sghill/code/build-well/gradle-checkstyle-example/acceptance/build/reports/checkstyle/test.html
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output.
+
+BUILD FAILED
+
+Total time: 3.618 secs

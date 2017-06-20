@@ -6,4 +6,5 @@ GRADLE_VERSION=$1
 OPTIONS="--console=plain --no-daemon"
 
 ./gradlew $OPTIONS wrapper --gradle-version=$GRADLE_VERSION
+./gradlew -q dependencies > /dev/null
 ./scripts/build-with-versions > output/gradle-$GRADLE_VERSION.txt 2>&1

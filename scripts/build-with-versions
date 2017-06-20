@@ -1,0 +1,14 @@
+#!/bin/bash
+set -xe
+
+OPTIONS="--console=plain --no-daemon"
+
+uname -a
+date
+./gradlew $OPTIONS --version
+./gradlew $OPTIONS projects
+./gradlew $OPTIONS dependencies --configuration checkstyle
+
+echo "*** *** *** *** *** ***"
+
+./gradlew $OPTIONS clean check

@@ -1,0 +1,9 @@
+#!/bin/bash
+set -xeu
+
+GRADLE_VERSION=$1
+
+OPTIONS="--console=plain --no-daemon"
+
+./gradlew $OPTIONS wrapper --gradle-version=$GRADLE_VERSION
+./scripts/build-with-versions > output/gradle-$GRADLE_VERSION.txt 2>&1

@@ -1,0 +1,37 @@
++ OPTIONS='--console=plain --no-daemon'
++ uname -a
+Darwin steves-imac.lan 16.6.0 Darwin Kernel Version 16.6.0: Fri Apr 14 16:21:16 PDT 2017; root:xnu-3789.60.24~6/RELEASE_X86_64 x86_64
++ date
+Tue Jun 20 15:54:10 PDT 2017
++ ./gradlew --console=plain --no-daemon --version
+
+------------------------------------------------------------
+Gradle 3.5.1
+------------------------------------------------------------
+
+Build time:   2017-06-16 14:36:27 UTC
+Revision:     d4c3bb4eac74bd0a3c70a0d213709e484193e251
+
+Groovy:       2.4.10
+Ant:          Apache Ant(TM) version 1.9.6 compiled on June 29 2015
+JVM:          1.8.0_131 (Oracle Corporation 25.131-b11)
+OS:           Mac OS X 10.12.5 x86_64
+
++ ./gradlew --console=plain --no-daemon projects
+:projects
+
+------------------------------------------------------------
+Root project
+------------------------------------------------------------
+
+Root project 'gradle-checkstyle-example'
++--- Project ':acceptance'
+\--- Project ':foundation'
+
+To see a list of the tasks of a project, run gradlew <project-path>:tasks
+For example, try running gradlew :acceptance:tasks
+
+BUILD SUCCESSFUL
+
+Total time: 2.43 secs
++ ./gradlew --console=plain --no-daemon dependencies --configuration checkstyle
